@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    font-size: 13px;
+    background-color: #F4F4F4;
+}
+
+:global a, :global img {
+    text-decoration: none;
+    color: inherit;
+    border: none;
+    outline: none;
+}
+
+:global li {
+    list-style: none;
+}
