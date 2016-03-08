@@ -2,6 +2,7 @@ var express = require('express');
 var fs = require('fs');
 var path = require('path');
 var mongoose = require('mongoose');
+var bodyParser = require('body-parser');
 var app = express();
 
 // Find the appropriate database to connect to, default to localhost if not found.
@@ -26,6 +27,9 @@ fs.readdirSync(__dirname + '/server/models').forEach(function(file) {
 
 var port = 3000;
 var publicPath = path.resolve(__dirname);
+
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended: true})); // for parsing application/x-www-form-urlencoded
 
 // We point to our static assets
 app.use(express.static(publicPath));

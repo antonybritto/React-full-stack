@@ -7,7 +7,7 @@ var path = require('path');
 module.exports = {
   context: __dirname,
   devtool: debug ? "inline-sourcemap" : null,
-  entry: "./index.js",
+  entry: "./client.js",
   output: {
     path: __dirname + "/build/",
     filename: "bundle.min.js"
@@ -36,6 +36,9 @@ module.exports = {
     postcssNest
   ],
   plugins: [
-      new webpack.HotModuleReplacementPlugin()
+      new webpack.ProvidePlugin({
+        'Promise': 'imports?this=>global!exports?global.Promise!es6-promise',
+        'fetch': 'imports?this=>global!exports?global.fetch!whatwg-fetch'
+      })
   ]
 };

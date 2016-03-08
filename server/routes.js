@@ -1,6 +1,7 @@
 /**
  * Routes for express app
  */
+var express = require('express');
 var events = require('./controllers/events');
 
 module.exports = function(app) {
