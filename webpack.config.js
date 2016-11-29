@@ -35,6 +35,9 @@ module.exports = {
     }),
     postcssNest
   ],
+  resolve:{
+    modulesDirectories: [__dirname, 'node_modules'],
+  },
   plugins: [
       new webpack.ProvidePlugin({
         'Promise': 'imports?this=>global!exports?global.Promise!es6-promise',
